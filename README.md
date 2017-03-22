@@ -10,3 +10,25 @@ Ha www nélkül használjuk az adott domaint, akkor a **.htaccess** file 399. so
 #  RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
 #</IfModule>
 ```
+
+## Hozzáadott új funkciók:
+
+**wp-config.php-file védelme**
+
+```apache
+<files wp-config.php>
+  order allow,deny
+  deny from all
+</files>
+```
+
+
+**.htaccess file védelme**
+
+```apache
+<files ~ "^.*\.([Hh][Tt][Aa])">
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
+```
